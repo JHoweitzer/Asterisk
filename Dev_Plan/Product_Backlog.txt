@@ -3,17 +3,13 @@ Product Backlog:
 Systems:
 - Create an Executable File
 - Create a window which accepts / prints text, identical to a command line
-- Develop systems to handle movement around a planetary map, as well as branching tree structures for individual areas
 - Develop a system that converts different input commands to a singular output command (E.g. synonymous words)
-- Develop a system which prints "memories" to files, and can re-read them to the player in dream sequences
 
 UI:
 - Develop a ASCII UI for the player status
 - Develop a ASCII UI for the map of the planet
 
 Story:
-- Identify the player's goals in an abstract, long-term sense.
 - Develop pivotal moments in the universe, and how they've impacted various planets
 - Identify short-term goals for the various planets
-- Write locations and scenarios for a Swamp Planet
 - Write locations and scenarios for a 
