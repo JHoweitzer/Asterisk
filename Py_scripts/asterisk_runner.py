@@ -1,9 +1,16 @@
 import os
 from utilities import clear
 import tutorial
+import planet_selector
 
+import YUA_NI4
+import J4U_R3N
+
+# A List of all the possible planets in the current iteration of the game.
+GAME_Planets = {"YUA-NI4": YUA_NI4.explore, "J4U-R3N": J4U_R3N.explore}
 
 # Welcome the player to the game
+clear()
 welcomeMessage = """
 Welcome.
 
@@ -23,16 +30,21 @@ if os.path.exists("../Save_Files"):
     # Returning player! Go to planet selection and game
     pass
 else:
+    # NEW PLAYER! Run the intro and tutorial!
     try:
         os.mkdir("../Save_Files")
         #Initial planets available to the first-time player:
-        with open("../Save_Files/Planets.txt", 'w') as planets:
-            planets.write("Planet 1: Y0A-NI4\tA verdant, marshy planet.\n")
-            #planets.write("Planet 2: J4U-R3N\tA dense, mountanous planet wracked with storms\n")
-            #planets.write("Planet 3: KU5-PR1\tA frosty, desolate planet\n")
+        with open("../Save_Files/Planets.txt", 'w') as planetFile:
+            planetFile.write("YUA-NI4:\tA verdant, marshy planet.\n")
+            planetFile.write("J4U-R3N:\tA dense, mountanous planet wracked with storms\n")
+            #planetFile.write("Planet 3: KU5-PR1\tA frosty, desolate planet\n")
     except OSError:
-        print("File initialization failed. Please \"reinstall\" the game ( sorry I'm bad programmer :< )")
+        print("Save File initialization failed. Please \"reinstall\" the game ( sorry I'm bad programmer :< )")
+        exit
     else:
-        # NEW PLAYER! Run the intro and tutorial!
         tutorial.run()
 
+# The player then selects a planet available to them, based on their progress in the game.
+explore = GAME_Planets.get(planet_selector.run())
+clear()
+explore()
