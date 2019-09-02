@@ -1,6 +1,5 @@
 import os
 from utilities import clear
-import tutorial
 import planet_selector
 
 import YUA_NI4
@@ -19,9 +18,18 @@ Soon, you'll be landing on a planet.
 You will explore. Learn. Your fate, ulitmately, is uncertain.
 You are alone. Except for DALE.
 """
+commandsMessage = """
+To navigate the planet, enter cardinal directions (NORTH, SOUTH, EAST, WEST) when prompted.
+To learn more about your status, enter STATUS
+To consult your Digital-Arm-Linked-Escort, enter DALE
+To explore an area, enter EXPLORE
+
+To review these commands, enter HELP
+"""
 print(welcomeMessage)
 input("<Enter to Continue>")
-clear()
+print(commandsMessage)
+input("<Enter to Continue>")
 
 # Detect if the player has run the game before. 
 # If not, create a save file folder and run the tutorial
@@ -42,8 +50,9 @@ else:
         print("Save File initialization failed. Please \"reinstall\" the game ( sorry I'm bad programmer :< )")
         exit
     else:
-        tutorial.run()
+        pass
 
 # The player then selects a planet available to them, based on their progress in the game.
+clear()
 explore = GAME_Planets.get(planet_selector.run())
 explore()
