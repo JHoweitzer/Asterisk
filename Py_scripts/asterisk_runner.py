@@ -36,8 +36,8 @@ else:
         #Initial planets available to the first-time player:
         with open("../Save_Files/Planets.txt", 'w') as planetFile:
             planetFile.write("YUA-NI4:\tA verdant, marshy planet.\n")
-            planetFile.write("J4U-R3N:\tA dense, mountanous planet wracked with storms\n")
-            #planetFile.write("Planet 3: KU5-PR1\tA frosty, desolate planet\n")
+            # ADDITIONAL PLANETS
+            # ADDITIONAL PLANETS
     except OSError:
         print("Save File initialization failed. Please \"reinstall\" the game ( sorry I'm bad programmer :< )")
         exit
