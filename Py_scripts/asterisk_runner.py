@@ -46,5 +46,4 @@ else:
 
 # The player then selects a planet available to them, based on their progress in the game.
 explore = GAME_Planets.get(planet_selector.run())
-clear()
 explore()
