@@ -1,5 +1,3 @@
-from utilities import clear
-
 # Based on the player's progress, allow them to select a planet. 
 # Returns a valid planet name.
 def run():

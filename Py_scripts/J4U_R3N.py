@@ -1,4 +1,4 @@
-from utilities import clear
+from _utilities import clear
 
 def explore():
     clear()

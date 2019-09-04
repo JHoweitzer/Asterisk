@@ -1,10 +1,25 @@
-from utilities import clear
+from _utilities import clear
+import _player
+import _dale
+import YUA_NI4_Adventures
+
+mapLayout = """
+[{A}] [{A}] [{A}] [{A}]
+[{A}] [{A}] [{A}] [{A}]
+[{A}] [{A}] [{A}] [{A}]
+[{A}] [{A}] [{A}] [{A}]
+"""
+
+mapDict = {(0,0): '?', (1,0): '?', (2,0): '?', (3,0): '?', 
+           (0,1): '?', (1,1): '?', (2,1): '?', (3,1): '?',
+           (0,2): '?', (1,2): '?', (2,2): '?', (3,2): '?',
+           (0,3): '?', (1,3): '?', (2,3): '?', (3,3): '?'}
+
+mapAdventures = {(0,0): '?', (1,0): '?', (2,0): '?', (3,0): '?', 
+                 (0,1): '?', (1,1): '?', (2,1): '?', (3,1): '?',
+                 (0,2): '?', (1,2): '?', (2,2): '?', (3,2): '?',
+                 (0,3): '?', (1,3): '?', (2,3): '?', (3,3): '?'}
 
 def explore():
     clear()
     print("Traveling to YUA_NI4 \n")
-    
-    # FOR TESTING PURPOSES - UNLOCK A NEW PLANET
-    print("You have unlocked a new planet")
-    with open("../Save_Files/Planets.txt", 'a') as planetFile:
-        planetFile.write("J4U-R3N:\tA dense, mountanous planet wracked with storms\n")
