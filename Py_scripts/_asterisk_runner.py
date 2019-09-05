@@ -19,9 +19,8 @@ You are alone. Except for DALE.
 """
 commandsMessage = """
 To navigate the planet, enter TRAVEL and a cardinal direction, ex: TRAVEL NORTH, when prompted.
-To learn more about your status, enter STATUS
-To consult your Digital-Arm-Linked-Escort, enter DALE
 To explore an area, enter EXPLORE
+To consult your Digital-Arm-Linked-Escort, enter DALE
 Other commands will be available, depending on your situation.
 
 To review these commands, enter HELP
@@ -58,6 +57,6 @@ explore = GAME_Planets.get(planet_selector.run())
 explore()
 
 # FOR TESTING PURPOSES - UNLOCK A NEW PLANET
-print("You have unlocked a new planet")
-with open("../Save_Files/Planets.txt", 'a') as planetFile:
-    planetFile.write("J4U-R3N:\tA dense, mountanous planet wracked with storms\n")
+#print("You have unlocked a new planet")
+#with open("../Save_Files/Planets.txt", 'a') as planetFile:
+#    planetFile.write("J4U-R3N:\tA dense, mountanous planet wracked with storms\n")
