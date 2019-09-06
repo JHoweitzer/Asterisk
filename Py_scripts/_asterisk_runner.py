@@ -17,17 +17,9 @@ Soon, you'll be landing on a planet.
 You will explore. Learn. Your fate, ulitmately, is uncertain.
 You are alone. Except for DALE.
 """
-commandsMessage = """
-To navigate the planet, enter TRAVEL and a cardinal direction, ex: TRAVEL NORTH, when prompted.
-To explore an area, enter EXPLORE
-To consult your Digital-Arm-Linked-Escort, enter DALE
-Other commands will be available, depending on your situation.
-
-To review these commands, enter HELP
-"""
 print(welcomeMessage)
 input("<Enter to Continue>")
-print(commandsMessage)
+printHelp()
 input("<Enter to Continue>")
 
 # Detect if the player has run the game before. 
