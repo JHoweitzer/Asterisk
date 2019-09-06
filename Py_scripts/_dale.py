@@ -1,17 +1,24 @@
 # DALE is a useful tool for the player to get additional information 
 # on their status and the world around them
-playerStatusHeader = """
-Current Status:
-~~~~~~~~~~~~~~~~~~~"""
+header = """~~~~~~~~~~~~~~~~~~~"""
 
-playerStatusFooter = """~~~~~~~~~~~~~~~~~~~"""
+footer = """~~~~~~~~~~~~~~~~~~~"""
+
 def printStatus(player):
-    print(playerStatusHeader)
+    print(header)
     print("| Status: " + player.status)
     print("| Injuries: ")
     for injury in player.injuries:
-        print("| \t"+ injury)
-    print(playerStatusFooter)
+        print("|\t"+ injury)
+    print(footer)
+
+def printInventory(player):
+    print(header)
+    print("| Current Inventory: ")
+    for item in player.inventory:
+        print("|\t"+ item)
+    print(footer)
+
 
 def dale(player, curMap):
 
@@ -22,11 +29,11 @@ def dale(player, curMap):
             print(curMap)
         elif text == "STATUS":
             printStatus(player)
-#        elif text == "INVENTORY":
-#            printInventory(player)
+        elif text == "INVENTORY":
+            printInventory(player)
         else:
             print("Uhhh... wut? ")
 
         text = input("All right! Anything else? ")
 
-    print("\nAll right! See ya later!")    
+    print("\nAll right! See ya later!")

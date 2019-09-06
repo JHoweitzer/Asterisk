@@ -1,7 +1,7 @@
 from _utilities import *
 from _player import Player
 from _dale import dale
-import YUA_NI4_Adventures
+from YUA_NI4_Adventures import *
 
 # The ASCII format for this planet's map display, used by DALE
 mapLayout = """
@@ -22,10 +22,10 @@ mapDict = {(0,3): '?', (1,3): '?', (2,3): '?', (3,3): '?',
            (0,1): '?', (1,1): '?', (2,1): '?', (3,1): '?',
            (0,0): '?', (1,0): '?', (2,0): '?', (3,0): '?'}
 
-#mapAdventures = {(0,0): '?', (1,0): '?', (2,0): '?', (3,0): '?', 
-#                 (0,1): '?', (1,1): '?', (2,1): '?', (3,1): '?',
-#                 (0,2): '?', (1,2): '?', (2,2): '?', (3,2): '?',
-#                 (0,3): '?', (1,3): '?', (2,3): '?', (3,3): '?'}
+exploreDict = {(0,0): ex_00, (1,0): ex_10, (2,0): ex_20, (3,0): ex_30, 
+               (0,1): ex_01, (1,1): ex_11, (2,1): ex_21, (3,1): ex_31,
+               (0,2): ex_02, (1,2): ex_12, (2,2): ex_22, (3,2): ex_32,
+               (0,3): ex_03, (1,3): ex_13, (2,3): ex_23, (3,3): ex_33}
 
 # Returns a formatted map based on the map dictionary as a string
 def getMap():
@@ -50,8 +50,9 @@ def explore():
                     "SOUTH": player.travelS, "WEST": player.travelW}
 
     # Begin game loop
+    cont = True
     text = input("What would you like to do? ")
-    while text != "QUIT":
+    while cont and text != "QUIT":
         if playerMove.get(text):
             action = playerMove[text]
             action(mapDict)
@@ -60,8 +61,11 @@ def explore():
         elif text == "HELP":
             printHelp()
         elif text == "EXPLORE":
-            pass
-        else:
-            pass
+            explore = exploreDict[(player.x, player.y)]
+            cont = explore(player)
+        
+        # JANKY FIX. REFACTOR LOOP SOMEHOW
+        if cont:
+            text = input("\nWhat would you like to do? ")
 
-        text = input("\nWhat would you like to do? ")
+explore()
