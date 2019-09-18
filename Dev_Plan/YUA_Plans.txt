@@ -1,0 +1,12 @@
+The player lands on the trunk of a massive tree in the Canopy.
+
+The canopy level is sparse and weirdly shaped, with holes the player cannot traverse. Below is the Mire which is flat, yet dangerous.
+
+Scenarios: Canopy
+- The player comes across a dinky shack built on an adjacent tree.
+- The player must cross thin branches to proceed to another area.
+
+Scenarios: Mire
+- The player finds some bizarre biolumanescent organisms floating on the water.
+- The player is dragged under.
+- An egg drops in the water near the player from the canopy above

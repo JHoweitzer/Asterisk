@@ -5,8 +5,8 @@ class Player():
         self.y = lSiteY
         self.planet = newPlanet
         self.status = "HEALTHY"
-        self.injuries = ["Mild Headache", "Mild Nausea"]
-        self.inventory = []
+        self.injuries = []
+        self.inventory = ["DALE", "Blaster"]
     
     def travelN(self, pDict):
         if (self.x, self.y + 1) in pDict:

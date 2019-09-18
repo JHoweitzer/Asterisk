@@ -1,0 +1,5 @@
+Completed Items
+
+- Develop systems to handle movement around a planetary map, as well as branching tree structures for individual areas
+- Develop a ASCII UI for the player status
+- Develop a ASCII UI for the map of the planet

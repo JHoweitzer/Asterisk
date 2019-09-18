@@ -1,7 +1,8 @@
 EPIC: Develop a rudimentary text-based adventure game in a sci-fi setting.
 
 Sprint Backlog:
-- Develop systems to handle movement around a planetary map, as well as branching tree structures for individual areas
+- Develop a system to handle multiple maps for a single planet; for example Canopy vs Mire.
 - Develop a system which prints "memories" to files, and can re-read them to the player in dream sequences
 - Identify the player's goals in an abstract, long-term sense.
 - Write locations and scenarios for a Swamp Planet
+- Develop a system for timed events

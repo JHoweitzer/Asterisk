@@ -6,8 +6,6 @@ Systems:
 - Develop a system that converts different input commands to a singular output command (E.g. synonymous words)
 
 UI:
-- Develop a ASCII UI for the player status
-- Develop a ASCII UI for the map of the planet
 
 Story:
 - Develop pivotal moments in the universe, and how they've impacted various planets
