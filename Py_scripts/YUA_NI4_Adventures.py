@@ -63,59 +63,58 @@ def planetIntro():
     input("<Enter to Continue>")
     clear()
 
-def ex_00(player):
+def exc_00(player):
     return True
 
-def ex_10(player):
+def exc_20(player):
     return True
 
-def ex_20(player):
+def exc_01(player):
     return True
 
-def ex_30(player):
+def exc_11(player):
     return True
 
-def ex_01(player):
-    return True
-
-def ex_11(player):
-    return True
-
-def ex_21(player):
-    return True
-
-def ex_31(player):
-    return True
-
-def ex_02(player):
-    return True
-
-def ex_12(player):
-    return True
-
-def ex_22(player):
+def exc_12(player):
     """
     THE LANDING SITE. Currently used as a test function
     """
     # TEMPORARY LOOP
     player.inventory.append("A sense of satisfaction")
-    cont = input("The landing site. Type CONTINUE to move on. Type anything else to leave the game: ")
-    while cont != "CONTINUE":
+    cont = input("The landing site. Type DESCEND to go to the mire. ")
+    if cont == "DESCEND":
+        player.z = 0
+        return True
+    else:
         return False
 
+def exc_22(player):
     return True
 
-def ex_32(player):
+def exm_00(player):
     return True
 
-def ex_03(player):
+def exm_10(player):
     return True
 
-def ex_13(player):
+def exm_20(player):
     return True
 
-def ex_23(player):
+def exm_01(player):
     return True
 
-def ex_33(player):
+def exm_11(player):
+    return True
+
+def exm_21(player):
+    return True
+
+def exm_02(player):
+    return True
+
+def exm_12(player):
+    return True
+
+def exm_22(player):
+
     return True
