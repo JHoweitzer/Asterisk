@@ -6,11 +6,11 @@ from YUA_NI4_Adventures import *
 canopyLayout = """
 Planet: YUA_NI4
 Current zone: Canopy
-~~~~~~~~~~~~~~~~~~~
-|     [{A}] [{B}]     
-| [{C}] [{D}] 
-| [{E}]     [{F}]      
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~         ^
+|     [{A}] [{B}]               N
+| [{C}] [{D}]                <W + E>
+| [{E}]     [{F}]               S
+~~~~~~~~~~~~~~~~~~~         V
 L = Landing Site
 X = Current Location
 ? = Not yet explored
@@ -18,17 +18,17 @@ X = Current Location
 mireLayout = """
 Planet: YUA_NI4
 Current zone: Mire
-~~~~~~~~~~~~~~~~~~~
-| [{A}] [{B}] [{C}]
-| [{D}] [{E}] [{F}] 
-| [{G}] [{H}] [{I}]  
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~       ^
+| [{A}] [{B}] [{C}]             N
+| [{D}] [{E}] [{F}]          <W + E>
+| [{G}] [{H}] [{I}]             S  
+~~~~~~~~~~~~~~~~~~~       V
 L = Landing Site
 X = Current Location
 ? = Not yet explored
 """
 
-worldMap = {(1,2,1): '?', (2,2,1): '?',
+worldMap = {(1,2,1): 'L', (2,2,1): '?',
             (0,1,1): '?', (1,1,1): '?',
             (0,0,1): '?', (2,0,1): '?',
             (0,2,0): '?', (1,2,0): '?', (2,2,0): '?', 
@@ -64,11 +64,10 @@ def explore():
     planetIntro()
 
     # Set the stage
-    lSiteX = 1
-    lSiteY = 2
-    lSiteZ = 1
-    player = Player( lSiteX, lSiteY, lSiteZ, "YUA_NI4")
-    worldMap[(lSiteX, lSiteY, lSiteZ)] = 'L'
+    player = Player( 1, 2, 1, "YUA_NI4")
+    print(maps[1]())
+    input("<Enter to Continue>")
+    clear()
 
     # A dictionary of available move actions of the player
     playerMove = {"NORTH": player.travelN, "EAST": player.travelE, 
@@ -83,6 +82,8 @@ def explore():
         if playerMove.get(text):
             action = playerMove[text]
             action(worldMap)
+            # TRIGGER ENTER AN AREA TEXT
+            # SHOULD BE BRIEF, AN OVERVIEW OF WHERE YOU GO.
         elif text == "DALE":
             dale(player, maps[player.z]())
         elif text == "HELP":
@@ -95,17 +96,20 @@ def explore():
         
         elif text == "EXPLORE":
             
+            # Append the zone in the player's eplored area.
+            # Explore the current area
             if (player.x, player.y, player.z) not in player.explored:
                 player.explored.append((player.x, player.y, player.z))
                 worldMap[(player.x, player.y, player.z)] = ' '
-            
-            # Explore the current area
-            explore = exploreDict[(player.x, player.y, player.z)]
-            cont = explore(player)
+                
+                explore = exploreDict[(player.x, player.y, player.z)]
+                cont = explore(player)
+                # Update the map to accomodate for any movement the player may have had during the adventure
+                worldMap[(player.x, player.y, player.z)] = 'X'
 
-            # Update the map to accomodate for any movement the player may have had during the adventure
-            worldMap[(player.x, player.y, player.z)] = 'X'
-        
+            else:
+                print("Area already explored")
+      
         # JANKY FIX. REFACTOR LOOP SOMEHOW
         if cont:
             text = input("\nWhat would you like to do? ")

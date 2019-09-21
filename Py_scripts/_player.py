@@ -1,3 +1,5 @@
+from memoryParser import parseMemories
+
 class Player():
 
     def __init__(self, lSiteX, lSiteY, lSiteZ, newPlanet):
@@ -5,10 +7,12 @@ class Player():
         self.y = lSiteY
         self.z = lSiteZ
         self.planet = newPlanet
+        self.memories = parseMemories()
         self.status = "HEALTHY"
         self.injuries = []
         self.inventory = ["DALE", "Blaster"]
         self.explored = []
+
 
     def updateUnexplored(self, pDict):
         if (self.x, self.y, self.z) not in self.explored:

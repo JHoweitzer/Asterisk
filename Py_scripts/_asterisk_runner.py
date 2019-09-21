@@ -46,6 +46,9 @@ else:
             planetFile.write("YUA-NI4:\tA verdant, marshy planet.\n")
             # ADDITIONAL PLANETS
             # ADDITIONAL PLANETS
+        with open("../Save_Files/Memories.txt", 'w') as memoryFile:
+            memoryFile.write("Memories:\n")
+            memoryFile.write("001: You remember a bright light\n")
     except OSError:
         print("Save File initialization failed. Please \"reinstall\" the game ( sorry I'm bad programmer :< )")
         exit
