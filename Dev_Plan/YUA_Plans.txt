@@ -1,12 +1,31 @@
 The player lands on the trunk of a massive tree in the Canopy.
+The canopy level is oddly shaped, with plenty of opportunity to fall.
+Below is the Mire which is flat, yet dark and dangerous.
 
-The canopy level is sparse and weirdly shaped, with holes the player cannot traverse. Below is the Mire which is flat, yet dangerous.
+Zone: YUA_NI4 Canopy		Planet: YUA_NI4 Mire
+~~~~~~~~~~~~~~~~~~~		~~~~~~~~~~~~~~~~~~~
+|     [A] [B]     		| [{A}] [{B}] [{C}]
+| [C] [D] 			| [{D}] [{E}] [{F}]
+| [E]     [F]      		| [{G}] [{H}] [{I}] 
+~~~~~~~~~~~~~~~~~~~		~~~~~~~~~~~~~~~~~~~
+L = Landing Site		L = Landing Site
+X = Current Location		X = Current Location
+? = Not yet explored		? = Not yet explored
 
 Scenarios: Canopy
-- The player comes across a dinky shack built on an adjacent tree.
-- The player must cross thin branches to proceed to another area.
+- Comes across a dinky shack built on an adjacent tree.
+- Must cross thin, hollow branches to proceed to another area.
+- Encounters a nest filled with eggs.
+- Attacked by a giant tree-swinging carnivorous ape-like thing.
+- Ambushed (Worshipped?) by Frog People
+- Finds bizarre carvings in the trees
 
 Scenarios: Mire
-- The player finds some bizarre biolumanescent organisms floating on the water.
-- The player is dragged under.
-- An egg drops in the water near the player from the canopy above
+- Dragged under.
+- MUD ANGLER
+- Attacked by a giant waterskeeter (gerridae)
+- Finds unsubmerged, mossy hill
+- Finds some bizarre biolumanescent organisms floating on the water.
+- Meets sentient creatures communicating using blinking lights
+- Finds an egg that had fallen from the trees above
+- Finds the remains of a crashed ship.
