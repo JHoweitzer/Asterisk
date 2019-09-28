@@ -11,6 +11,7 @@ class Player():
         self.status = "HEALTHY"
         self.injuries = []
         self.inventory = ["DALE", "Blaster"]
+        self.visited = []
         self.explored = []
 
 

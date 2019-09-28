@@ -1,7 +1,8 @@
 from _utilities import clear
+from _utilities import printHelp
 from _player import Player
 from _dale import dale
-from YUA_NI4_Adventures import *
+from YUA_NI4_Adventures import adventures
 
 canopyLayout = """
 Planet: YUA_NI4
@@ -48,26 +49,33 @@ def getMireMap():
 
 maps = {1: getCanMap, 0: getMireMap}
 
-exploreDict = {(1,2,1): exc_12, (2,2,1): exc_22, 
-               (0,1,1): exc_01, (1,1,1): exc_11,            
-               (0,0,1): exc_00, (2,0,1): exc_20,
-               (0,2,0): exm_02, (1,2,0): exm_12, (2,2,0): exm_22, 
-               (0,1,0): exm_01, (1,1,0): exm_11, (2,1,0): exm_21,
-               (0,0,0): exm_00, (1,0,0): exm_10, (2,0,0): exm_20}
+visitDict = {(1,2,1): adventures.vc_12, (2,2,1): adventures.vc_22, 
+               (0,1,1): adventures.vc_01, (1,1,1): adventures.vc_11,            
+               (0,0,1): adventures.vc_00, (2,0,1): adventures.vc_20,
+               (0,2,0): adventures.vm_02, (1,2,0): adventures.vm_12, (2,2,0): adventures.vm_22, 
+               (0,1,0): adventures.vm_01, (1,1,0): adventures.vm_11, (2,1,0): adventures.vm_21,
+               (0,0,0): adventures.vm_00, (1,0,0): adventures.vm_10, (2,0,0): adventures.vm_20}
 
+exploreDict = {(1,2,1): adventures.exc_12, (2,2,1): adventures.exc_22, 
+               (0,1,1): adventures.exc_01, (1,1,1): adventures.exc_11,            
+               (0,0,1): adventures.exc_00, (2,0,1): adventures.exc_20,
+               (0,2,0): adventures.exm_02, (1,2,0): adventures.exm_12, (2,2,0): adventures.exm_22, 
+               (0,1,0): adventures.exm_01, (1,1,0): adventures.exm_11, (2,1,0): adventures.exm_21,
+               (0,0,0): adventures.exm_00, (1,0,0): adventures.exm_10, (2,0,0): adventures.exm_20}
 
 # Explore the planet YUA-NI4
 def explore():
 
     # Clear the screen, give the Intro
     clear()
-    planetIntro()
+    adventures.planetIntro()
 
     # Set the stage
     player = Player( 1, 2, 1, "YUA_NI4")
     print(maps[1]())
     input("<Enter to Continue>")
-    clear()
+    adventures.vc_12(player)
+    player.visited.append((player.x, player.y, player.z))
 
     # A dictionary of available move actions of the player
     playerMove = {"NORTH": player.travelN, "EAST": player.travelE, 
@@ -82,8 +90,10 @@ def explore():
         if playerMove.get(text):
             action = playerMove[text]
             action(worldMap)
-            # TRIGGER ENTER AN AREA TEXT
-            # SHOULD BE BRIEF, AN OVERVIEW OF WHERE YOU GO.
+            if (player.x, player.y, player.z) not in player.visited:
+                player.visited.append((player.x, player.y, player.z))
+                visit = visitDict[(player.x, player.y, player.z)]
+                cont = visit(player)
         elif text == "DALE":
             dale(player, maps[player.z]())
         elif text == "HELP":
@@ -101,7 +111,6 @@ def explore():
             if (player.x, player.y, player.z) not in player.explored:
                 player.explored.append((player.x, player.y, player.z))
                 worldMap[(player.x, player.y, player.z)] = ' '
-                
                 explore = exploreDict[(player.x, player.y, player.z)]
                 cont = explore(player)
                 # Update the map to accomodate for any movement the player may have had during the adventure

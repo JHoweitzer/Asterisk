@@ -6,89 +6,168 @@ from _utilities import clear
 from _utilities import printHelp
 from YUA_NI4_Texts import *
 
-def planetIntro():
-    print(planetIntro1)
-    input("<Enter to Continue>")
-    clear()
-    print(planetIntro2)
-    input("<Enter to Continue>")
-    clear()
-    print(planetIntro3)
-    input("<Enter to Continue>")
-    clear()
-    print(planetIntro4)
-    input("<Enter to Continue>")
-    clear()
-    printHelp()
-    input("<Enter to Continue>")
-    clear()
+class adventures():
 
-def exc_00(player):
-    print(c00Desc)
-    return True
+    @staticmethod
+    def planetIntro():
+        print(planetIntro1)
+        input("<Enter to Continue>")
+        print(planetIntro2)
+        input("<Enter to Continue>")
+        print(planetIntro3)
+        input("<Enter to Continue>")
+        print(planetIntro4)
+        input("<Enter to Continue>")
+        printHelp()
+        input("<Enter to Continue>")
 
-def exc_20(player):
-    print(c20Desc)
-    return True
-
-def exc_01(player):
-    print(c01Desc)
-    return True
-
-def exc_11(player):
-    print(c11Desc)
-    return True
-
-def exc_12(player):
-    print(c12Desc)
-    return True
-    """
-    player.inventory.append("A sense of satisfaction")
-    cont = input("The landing site. Type DESCEND to go to the mire. ")
-    if cont == "DESCEND":
-        player.z = 0
+    @staticmethod
+    def exc_00(player):
+        print("Explored canopy 0-0")
         return True
-    else:
-        print("Did not DESCEND")
+
+    @staticmethod
+    def vc_00(player):
+        print(c00Desc)
         return True
-    """
 
-def exc_22(player):
-    print(c22Desc)
-    return True
+    @staticmethod
+    def exc_20(player):
+        print("Explored canopy 2-0")
+        return True
 
-def exm_00(player):
-    print(m00Desc)
-    return True
+    @staticmethod
+    def vc_20(player):
+        print(c20Desc)
+        return True
 
-def exm_10(player):
-    print(m10Desc)
-    return True
+    @staticmethod
+    def exc_01(player):
+        print("Explored canopy 0-1")
+        return True
 
-def exm_20(player):
-    print(m20Desc)
-    return True
+    @staticmethod
+    def vc_01(player):
+        print(c01Desc)
+        return True
 
-def exm_01(player):
-    print(m01Desc)
-    return True
+    @staticmethod
+    def exc_11(player):
+        print("Explored canopy 1-1")
+        return True
 
-def exm_11(player):
-    print(m11Desc)
-    return True
+    @staticmethod
+    def vc_11(player):
+        print(c11Desc)
+        return True
 
-def exm_21(player):
-    print(m21Desc)
-    return True
+    @staticmethod
+    def exc_12(player):
+        print("Explored Canopy 1-2")
+        return True
 
-def exm_02(player):
-    print(m02Desc)
-    return True
+    @staticmethod
+    def vc_12(player):
+        print(c12Desc)
+        input("<Enter to Continue>")
+        return True
 
-def exm_12(player):
-    print(m12Desc)
-    return True
+    @staticmethod
+    def exc_22(player):
+        print("Explored Canopy 2-2")
+        return True
 
-def exm_22(player):
-    print(m22Desc)
-    return True
+    @staticmethod
+    def vc_22(player):
+        print(c22Desc)
+        return True
+
+    @staticmethod
+    def exm_00(player):
+        print("Explored Mire 0-0")
+        return True
+
+    @staticmethod
+    def vm_00(player):
+        print(m00Desc)
+        return True
+
+    @staticmethod
+    def exm_10(player):
+        print("Explored Mire 1-0")
+        return True
+
+    @staticmethod
+    def vm_10(player):
+        print(m10Desc)
+        return True
+
+    @staticmethod
+    def exm_20(player):
+        print("Explored Mire 2-0")
+        return True
+
+    @staticmethod
+    def vm_20(player):
+        print(m20Desc)
+        return True
+
+    @staticmethod
+    def exm_01(player):
+        print("Explored Mire 0-1")
+        return True
+
+    @staticmethod
+    def vm_01(player):
+        print(m01Desc)
+        return True
+
+    @staticmethod
+    def exm_11(player):
+        print("Explored Mire 1-1")
+        return True
+
+    @staticmethod
+    def vm_11(player):
+        print(m11Desc)
+        return True
+
+    @staticmethod
+    def exm_21(player):
+        print("Explored Mire 2-1")
+        return True
+
+    @staticmethod
+    def vm_21(player):
+        print(m21Desc)
+        return True
+
+    @staticmethod
+    def exm_02(player):
+        print("Explored Mire 0-2")
+        return True
+
+    @staticmethod
+    def vm_02(player):
+        print(m02Desc)
+        return True
+
+    @staticmethod
+    def exm_12(player):
+        print("Explored Mire 1-2")
+        return True
+
+    @staticmethod
+    def vm_12(player):
+        print(m12Desc)
+        return True
+
+    @staticmethod
+    def exm_22(player):
+        print("Explored Mire 2-2")
+        return True
+
+    @staticmethod
+    def vm_22(player):
+        print(m22Desc)
+        return True
