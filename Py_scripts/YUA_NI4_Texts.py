@@ -65,33 +65,58 @@ c11Desc = """
 Visited Canopy 1-1
 """
 c22Desc = """
-Visited Canopy 2-2
+Traveling east, the branch below you twists and sinks into darkness. Following your shoulder-
+mounted lamp, you tread gently across knots, cracks, and errant twigs. Slowly, the branch 
+narrows and bends beneath your weight. You squat to maintain your balance.
 """
+c22Expl = """
+Crouched on the edge of the branch, you listen gently to the humming of life below you.
+Looking below, clouds of insects scatter and part in the white light. Slick black water shines
+back. You estimate it's around a 10-meter drop, though it's hard to gauge the water's
+depth.
+"""
+c22Drop = """
+You slowly stand, steadying yourself on the quivering branch. "You sure about this bud?" Dale 
+chirps.
+
+You close your eyes, take a breath, then step into the black. You tuck your arms and legs in,
+and with a soft splash you plunge into the cold, still murk. You hit the mud beneath the water 
+hard, and you feel yourself get lodged. You open your eyes to the chunky brown water around you. 
+
+Quiet.
+
+You spread your arms out, establish your footing, then pull yourself above the surface. The water
+ended up only being chest-deep. With one hand you wipe off your glass visor, then Dale's screen.
+
+"2.5/10. Poor form, no flips." Dale's screen flashes. A reference to a diving competetion you've 
+never seen. Good one bud.
+"""
+
 #------------ MIRE ------------#
 m00Desc = """
-Visited Canopy 0-0
+Visited Mire 0-0
 """
 m10Desc = """
-Visited Canopy 1-0
+Visited Mire 1-0
 """
 m20Desc = """
-Visited Canopy 2-0
+Visited Mire 2-0
 """
 m01Desc = """
-Visited Canopy 0-1
+Visited Mire 0-1
 """
 m11Desc = """
-Visited Canopy 1-1
+Visited Mire 1-1
 """
 m21Desc = """
-Visited Canopy 2-1
+Visited Mire 2-1
 """
 m02Desc = """
-Visited Canopy 0-2
+Visited Mire 0-2
 """
 m12Desc = """
-Visited Canopy 1-2
+Visited Mire 1-2
 """
 m22Desc = """
-Visited Canopy 2-2
+Visited Mire 2-2
 """

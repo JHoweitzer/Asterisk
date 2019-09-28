@@ -88,20 +88,25 @@ def explore():
 
         # Parse input from the player
         if playerMove.get(text):
+
             action = playerMove[text]
             action(worldMap)
+
             if (player.x, player.y, player.z) not in player.visited:
                 player.visited.append((player.x, player.y, player.z))
                 visit = visitDict[(player.x, player.y, player.z)]
                 cont = visit(player)
+
         elif text == "DALE":
             dale(player, maps[player.z]())
+
         elif text == "HELP":
             printHelp()
 
         # TEMPORARY USED FOR TESTING
         elif text == "MAP":
             print(maps[player.z]())
+            print("")
         # ~~~~~~~~~~~~~~~~~~~~~~~~~~
         
         elif text == "EXPLORE":
@@ -109,18 +114,23 @@ def explore():
             # Append the zone in the player's eplored area.
             # Explore the current area
             if (player.x, player.y, player.z) not in player.explored:
-                player.explored.append((player.x, player.y, player.z))
+
+                #player.explored.append((player.x, player.y, player.z))
+
                 worldMap[(player.x, player.y, player.z)] = ' '
                 explore = exploreDict[(player.x, player.y, player.z)]
                 cont = explore(player)
+
                 # Update the map to accomodate for any movement the player may have had during the adventure
+
                 worldMap[(player.x, player.y, player.z)] = 'X'
 
             else:
-                print("Area already explored")
+                print("Area already explored\n")
       
         # JANKY FIX. REFACTOR LOOP SOMEHOW
         if cont:
-            text = input("\nWhat would you like to do? ")
+            text = input("What would you like to do? ")
 
+# Used for quick testing purposes
 explore()

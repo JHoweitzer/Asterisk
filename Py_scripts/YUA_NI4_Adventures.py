@@ -63,24 +63,34 @@ class adventures():
 
     @staticmethod
     def exc_12(player):
-        print("Explored Canopy 1-2")
+        print(c12Desc)
         return True
 
     @staticmethod
     def vc_12(player):
-        print(c12Desc)
-        input("<Enter to Continue>")
+        print("\nType EXPLORE to learn about the landing site \n")
         return True
 
     @staticmethod
     def exc_22(player):
-        print("Explored Canopy 2-2")
-        return True
+        print(c22Expl)
+        choice = input("Would you like to drop into the mire? Yes / No: ")
+        if choice == "Yes":
+            print(c22Drop)
+            player.z = 0
+            input("<Enter to Continue>")
+            print(m22Desc)
+            player.visited.append((player.x, player.y, player.z))
+            return True
+        else:
+            return True
 
     @staticmethod
     def vc_22(player):
         print(c22Desc)
         return True
+
+    #------------ MIRE ------------#
 
     @staticmethod
     def exm_00(player):
