@@ -22,7 +22,7 @@ def printInventory(player):
 
 def dale(player, curMap):
 
-    text = input("\nHey bud! How can I help? ")
+    text = input("\nHey bud! How can I help? ").upper()
     while text != "EXIT" and text != "NO":
 
         if text == "MAP":

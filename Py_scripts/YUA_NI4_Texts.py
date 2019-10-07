@@ -88,8 +88,7 @@ Quiet.
 You spread your arms out, establish your footing, then pull yourself above the surface. The water
 ended up only being chest-deep. With one hand you wipe off your glass visor, then Dale's screen.
 
-"2.5/10. Poor form, no flips." Dale's screen flashes. A reference to a diving competetion you've 
-never seen. Good one bud.
+"2.5/10. Poor form, no flips." Dale's screen flashes. Good one bud.
 """
 
 #------------ MIRE ------------#

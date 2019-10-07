@@ -4,6 +4,8 @@
 
 from _utilities import clear
 from _utilities import printHelp
+from _utilities import filterInput
+from _dale import dale
 from YUA_NI4_Texts import *
 
 class adventures():
@@ -74,16 +76,25 @@ class adventures():
     @staticmethod
     def exc_22(player):
         print(c22Expl)
-        choice = input("Would you like to drop into the mire? Yes / No: ")
-        if choice == "Yes":
-            print(c22Drop)
-            player.z = 0
-            input("<Enter to Continue>")
-            print(m22Desc)
-            player.visited.append((player.x, player.y, player.z))
-            return True
-        else:
-            return True
+
+        cont = True
+        while cont:
+            action = input("Exploring area 2-2. Decisions, decisions... ").upper()
+            # Drop into the mire
+            if filterInput(action, "JUMP", "DROP", "DIVE", "FALL", "LEAP", confirmationMessage="Drop into the mire?"):
+                print(c22Drop)
+                player.z = 0
+                input("<Enter to Continue>")
+                print(m22Desc)
+                player.visited.append((player.x, player.y, player.z))
+                return True
+            # Leave
+            elif filterInput(action, "DALE", confirmationMessage="NONE"):
+                dale(player, "\nMAP UNAVAILABLE. Sorry bud :(\n")
+            elif filterInput(action, "LEAVE", "RETURN", "NOTHING", "STAY", confirmationMessage="NONE"):
+                return True
+            else:
+                print("Please try again, or type LEAVE to stop exploring this area.\n")
 
     @staticmethod
     def vc_22(player):

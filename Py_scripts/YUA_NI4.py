@@ -83,13 +83,14 @@ def explore():
 
     # Begin game loop
     cont = True
-    text = input("What would you like to do? ")
-    while cont and text != "QUIT":
+    while cont:
+
+        choice = input("What would you like to do? ").upper()
 
         # Parse input from the player
-        if playerMove.get(text):
+        if playerMove.get(choice):
 
-            action = playerMove[text]
+            action = playerMove[choice]
             action(worldMap)
 
             if (player.x, player.y, player.z) not in player.visited:
@@ -97,19 +98,19 @@ def explore():
                 visit = visitDict[(player.x, player.y, player.z)]
                 cont = visit(player)
 
-        elif text == "DALE":
+        elif choice == "DALE":
             dale(player, maps[player.z]())
 
-        elif text == "HELP":
+        elif choice == "HELP":
             printHelp()
 
         # TEMPORARY USED FOR TESTING
-        elif text == "MAP":
+        elif choice == "MAP":
             print(maps[player.z]())
             print("")
         # ~~~~~~~~~~~~~~~~~~~~~~~~~~
         
-        elif text == "EXPLORE":
+        elif choice == "EXPLORE":
             
             # Append the zone in the player's eplored area.
             # Explore the current area
@@ -127,10 +128,10 @@ def explore():
 
             else:
                 print("Area already explored\n")
-      
-        # JANKY FIX. REFACTOR LOOP SOMEHOW
-        if cont:
-            text = input("What would you like to do? ")
+
+        elif choice == "QUIT":
+
+            return 
 
 # Used for quick testing purposes
 explore()

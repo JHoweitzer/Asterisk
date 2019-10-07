@@ -51,7 +51,6 @@ class Player():
         else:
             print("ERROR. CANNOT TRAVEL IN THAT DIRECTION")
 
-    
     def travelW(self, pDict):
         if (self.x - 1, self.y, self.z) in pDict:
             self.updateUnexplored(pDict)
