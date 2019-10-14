@@ -55,7 +55,36 @@ class adventures():
 
     @staticmethod
     def exc_11(player):
-        print("Explored canopy 1-1")
+        print(c11Expl)
+        cont = True
+        base = True
+        branch = False
+        #climbing = False
+        #carveSearch = False
+        while cont:
+            action = input("Exploring area 1-1. Decisions, decisions... ").upper()
+            if filterInput(action, "LEAVE", "RETURN", "NOTHING", "STAY", confirmationMessage="NONE"):
+                if (base):
+                    return True
+                else:
+                    print("Unable to leave at this moment")
+            elif filterInput(action, "JUMP", "LEAP", "BRANCH", "LEFT", confirmationMessage="Jump to the nearby branch?"):
+                if (base):
+                    print(c11BranchDesc)
+                    base = False
+                    branch = True
+                elif (branch):
+                    print("After a moment of hesitation, you jump back to your original branch.")
+                    base = True
+                    branch = False
+            elif filterInput(action, "BEETLE", "BUG", "FOLLOW", "CHASE", confirmationMessage="NONE"):
+                if (base):
+                    print("The beetle marches across the branch to your left. The branch is thin, but close enough to jump to.")
+                elif (branch):
+                    print("Chase that beetle!")
+            else:
+                print("Please try again, or type LEAVE to stop exploring this area (if possible).\n")
+            
         return True
 
     @staticmethod
@@ -85,12 +114,12 @@ class adventures():
                 print(c22Drop)
                 player.z = 0
                 input("<Enter to Continue>")
+                print(c22Drop2)
+                input("<Enter to Continue>")
                 print(m22Desc)
                 player.visited.append((player.x, player.y, player.z))
                 return True
             # Leave
-            elif filterInput(action, "DALE", confirmationMessage="NONE"):
-                dale(player, "\nMAP UNAVAILABLE. Sorry bud :(\n")
             elif filterInput(action, "LEAVE", "RETURN", "NOTHING", "STAY", confirmationMessage="NONE"):
                 return True
             else:

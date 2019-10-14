@@ -68,7 +68,7 @@ def explore():
 
     # Clear the screen, give the Intro
     clear()
-    adventures.planetIntro()
+    #adventures.planetIntro() COMMENTED OUT FOR FASTER TESTING
 
     # Set the stage
     player = Player( 1, 2, 1, "YUA_NI4")
@@ -123,6 +123,7 @@ def explore():
                 cont = explore(player)
 
                 # Update the map to accomodate for any movement the player may have had during the adventure
+                # Append Explored to player.explored (if necessary)
 
                 worldMap[(player.x, player.y, player.z)] = 'X'
 
