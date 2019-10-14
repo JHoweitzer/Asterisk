@@ -19,6 +19,9 @@ Scenarios: Canopy
 - Attacked by a giant tree-swinging carnivorous ape-like thing.
 - Ambushed (Worshipped?) by Frog People
 - Finds bizarre carvings in the trees
+	- Giant, sentient, ancient stick/leaf humanoid insects.
+- A hive of insects
+- A large green beetle
 
 Scenarios: Mire
 - Dragged under.
@@ -29,3 +32,6 @@ Scenarios: Mire
 - Meets sentient creatures communicating using blinking lights
 - Finds an egg that had fallen from the trees above
 - Finds the remains of a crashed ship.
+
+Notes:
+CONSIDER REMOVING MIRE 1-1, that should be the trunk of the tree!
